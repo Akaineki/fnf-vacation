@@ -34,11 +34,11 @@
 
 	<!-- _____________________________ Path Settings ____________________________ -->
 
-	<set name="BUILD_DIR" value="exportBROTHERS/debug" if="debug" />
-	<set name="BUILD_DIR" value="exportBROTHERS/release" unless="debug" />
-	<set name="BUILD_DIR" value="exportBROTHERS/32bit" if="32bit" />
+	<set name="BUILD_DIR" value="export_VACATION/debug" if="debug" />
+	<set name="BUILD_DIR" value="export_VACATION/release" unless="debug" />
+	<set name="BUILD_DIR" value="export_VACATION/32bit" if="32bit" />
 
-	<classpath name="source_BROTHERS" />
+	<classpath name="source_VACATION" />
 
 	<assets path="assets/preload" rename="assets" exclude="*.ogg" if="web"/>
 	<assets path="assets/preload" rename="assets" exclude="*.mp3" unless="web"/>
