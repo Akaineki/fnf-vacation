@@ -26,7 +26,7 @@ class Caching extends MusicBeatState
     var done = 0;
 
     var text:FlxText;
-    var kadeLogo:FlxSprite;
+    var logo:FlxSprite;
 
 	override function create()
 	{
@@ -35,20 +35,28 @@ class Caching extends MusicBeatState
         FlxG.worldBounds.set(0,0);
 
         text = new FlxText(FlxG.width / 2, FlxG.height / 2 + 300,0,"Loading...");
-        text.size = 34;
+        text.size = 16;
+        text.autoSize = false;
         text.alignment = FlxTextAlign.CENTER;
-        text.alpha = 0;
+        
+        logo = new FlxSprite(FlxG.width / 2, FlxG.height / 2).loadGraphic(Paths.image('logo'));
+        logo.antialiasing = true;
+        logo.x -= logo.width / 2;
+        logo.y -= logo.height / 2 + 100;
+        
+        trace(FlxG.width);
+        trace(FlxG.height);
 
-        kadeLogo = new FlxSprite(FlxG.width / 2, FlxG.height / 2).loadGraphic(Paths.image('KadeEngineLogo'));
-        kadeLogo.x -= kadeLogo.width / 2;
-        kadeLogo.y -= kadeLogo.height / 2 + 100;
-        text.y -= kadeLogo.height / 2 - 125;
-        text.x -= 170;
-        kadeLogo.setGraphicSize(Std.int(kadeLogo.width * 0.6));
-
-        kadeLogo.alpha = 0;
-
-        add(kadeLogo);
+        // text.x = 1280/2;
+        
+        text.x = 0;
+        text.fieldWidth = FlxG.width;
+        text.y -= logo.height / 2 - 125;
+        // text.y = FlxG.height/2;
+        
+        logo.setGraphicSize(Std.int(logo.width * 0.6));
+        
+        add(logo);
         add(text);
 
         trace('starting caching..');
@@ -57,26 +65,24 @@ class Caching extends MusicBeatState
             cache();
         });
 
-
         super.create();
     }
 
     var calledDone = false;
 
+	function percentage(value: Float, outOff: Float):Float {
+        return (value * 100) / outOff;
+	}
+
     override function update(elapsed) 
     {
-
         if (toBeDone != 0 && done != toBeDone)
         {
-            var alpha = HelperFunctions.truncateFloat(done / toBeDone * 100,2) / 100;
-            kadeLogo.alpha = alpha;
-            text.alpha = alpha;
-            text.text = "Loading... (" + done + "/" + toBeDone + ")";
+            text.text = "Loading... (" + Math.ceil(percentage(done, toBeDone)) + "%)";
         }
 
         super.update(elapsed);
     }
-
 
     function cache()
     {
