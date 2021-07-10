@@ -679,15 +679,6 @@ class PlayState extends MusicBeatState
 				mar.scrollFactor.set(0.9, 0.9);
 				add(mar);
 
-			
-				/*MAR PARADO
-				var mar:FlxSprite = new FlxSprite(-558, 343).loadGraphic(Paths.image('joao_tubarao/mar'));
-				mar.antialiasing = true;
-				mar.scrollFactor.set(0.9, 0.9);
-				mar.active = false;
-				add(mar);
-				*/
-
 				var chao:FlxSprite = new FlxSprite(-558, 483).loadGraphic(Paths.image('joao_tubarao/chao'));
 				chao.antialiasing = true;
 				chao.scrollFactor.set(1, 1);
@@ -712,8 +703,57 @@ class PlayState extends MusicBeatState
 				palmeiras.antialiasing = true;
 				palmeiras.scrollFactor.set(1.2, 1.2);
 				palmeiras.active = false;
-				
 			}	
+			case 'oceano':
+			{
+				defaultCamZoom = 0.9; 
+				curStage = 'oceano';
+
+				var bg:FlxSprite = new FlxSprite(-2225, -1430).loadGraphic(Paths.image('joao_grandao/BG'));
+				bg.antialiasing = true;
+				bg.scrollFactor.set(1.5, 1.5);
+				bg.setGraphicSize(Std.int(bg.width * 2));
+				bg.active = false;
+				add(bg);
+
+				var castelo:FlxSprite = new FlxSprite(-1004, -1891).loadGraphic(Paths.image('joao_grandao/castelo'));
+				castelo.antialiasing = true;
+				castelo.scrollFactor.set(1.5, 1.5);
+				castelo.active = false;
+				castelo.setGraphicSize(Std.int(castelo.width * 2));
+				add(castelo);
+
+				var barco:FlxSprite = new FlxSprite(-2191, -969).loadGraphic(Paths.image('joao_grandao/barco'));
+				barco.antialiasing = true;
+				barco.scrollFactor.set(1.2, 1.2);
+				barco.setGraphicSize(Std.int(barco.width * 2));
+				barco.active = false;
+				add(barco);
+
+				var frente:FlxSprite = new FlxSprite(-2325, 196).loadGraphic(Paths.image('joao_grandao/frente'));
+				frente.antialiasing = true;
+				frente.scrollFactor.set(1.0, 1.0);
+				frente.setGraphicSize(Std.int(frente.width * 2));
+				frente.active = false;
+				add(frente);
+
+				var chao:FlxSprite = new FlxSprite(-2644, 449).loadGraphic(Paths.image('joao_grandao/chao'));
+				chao.antialiasing = true;
+				chao.scrollFactor.set(0.9, 0.9);
+				chao.setGraphicSize(Std.int(chao.width * 2));
+				chao.active = false;
+				add(chao);
+
+				var luz:FlxSprite = new FlxSprite(-2476, -1584).loadGraphic(Paths.image('joao_grandao/luz'));
+				luz.antialiasing = true;
+				luz.scrollFactor.set(0.9, 0.9);
+				luz.setGraphicSize(Std.int(luz.width * 2));
+				luz.active = false;
+				add(luz);
+
+			}	
+
+
 			case 'schoolEvil':
 			{
 					curStage = 'schoolEvil';
@@ -946,6 +986,10 @@ class PlayState extends MusicBeatState
 				boyfriend.y = 275;
 				gf.x = 401;
 				gf.y = -32;
+			case 'oceano':
+				boyfriend.setPosition(1022, 280);
+				gf.setPosition(432, -95);
+			
 		}
 
 		if (!PlayStateChangeables.Optimize)
