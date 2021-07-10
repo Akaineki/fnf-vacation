@@ -56,8 +56,8 @@ class KeyBindMenu extends FlxSubState
 
     var state:String = "select";
 
-	override function create()
-	{	
+    override function create()
+    {    
 
         for (i in 0...keys.length)
         {
@@ -72,25 +72,25 @@ class KeyBindMenu extends FlxSubState
             if (k == null)
                 gpKeys[i] = defaultGpKeys[i];
         }
-	
-		//FlxG.sound.playMusic('assets/music/configurator' + TitleState.soundExt);
+    
+        //FlxG.sound.playMusic('assets/music/configurator' + TitleState.soundExt);
 
-		persistentUpdate = true;
+        persistentUpdate = true;
 
         keyTextDisplay = new FlxText(-10, 0, 1280, "", 72);
-		keyTextDisplay.scrollFactor.set(0, 0);
-		keyTextDisplay.setFormat("VCR OSD Mono", 42, FlxColor.WHITE, FlxTextAlign.CENTER, FlxTextBorderStyle.OUTLINE, FlxColor.BLACK);
-		keyTextDisplay.borderSize = 2;
-		keyTextDisplay.borderQuality = 3;
+        keyTextDisplay.scrollFactor.set(0, 0);
+        keyTextDisplay.setFormat("VCR OSD Mono", 42, FlxColor.WHITE, FlxTextAlign.CENTER, FlxTextBorderStyle.OUTLINE, FlxColor.BLACK);
+        keyTextDisplay.borderSize = 2;
+        keyTextDisplay.borderQuality = 3;
 
         blackBox = new FlxSprite(0,0).makeGraphic(FlxG.width,FlxG.height,FlxColor.BLACK);
         add(blackBox);
 
         infoText = new FlxText(-10, 580, 1280, 'Current Mode: ${KeyBinds.gamepad ? 'GAMEPAD' : 'KEYBOARD'}. Press TAB to switch\n(${KeyBinds.gamepad ? 'RIGHT Trigger' : 'Escape'} to save, ${KeyBinds.gamepad ? 'LEFT Trigger' : 'Backspace'} to leave without saving. ${KeyBinds.gamepad ? 'START To change a keybind' : ''})', 72);
-		infoText.scrollFactor.set(0, 0);
-		infoText.setFormat("VCR OSD Mono", 24, FlxColor.WHITE, FlxTextAlign.CENTER, FlxTextBorderStyle.OUTLINE, FlxColor.BLACK);
-		infoText.borderSize = 2;
-		infoText.borderQuality = 3;
+        infoText.scrollFactor.set(0, 0);
+        infoText.setFormat("VCR OSD Mono", 24, FlxColor.WHITE, FlxTextAlign.CENTER, FlxTextBorderStyle.OUTLINE, FlxColor.BLACK);
+        infoText.borderSize = 2;
+        infoText.borderQuality = 3;
         infoText.alpha = 0;
         infoText.screenCenter(FlxAxes.X);
         add(infoText);
@@ -107,13 +107,13 @@ class KeyBindMenu extends FlxSubState
 
         textUpdate();
 
-		super.create();
-	}
+        super.create();
+    }
 
     var frames = 0;
 
-	override function update(elapsed:Float)
-	{
+    override function update(elapsed:Float)
+    {
         var gamepad:FlxGamepad = FlxG.gamepads.lastActive;
 
         if (frames <= 10)
@@ -241,11 +241,11 @@ class KeyBindMenu extends FlxSubState
         }
 
         if(FlxG.keys.justPressed.ANY)
-			textUpdate();
+            textUpdate();
 
-		super.update(elapsed);
-		
-	}
+        super.update(elapsed);
+        
+    }
 
     function textUpdate(){
 
@@ -346,9 +346,9 @@ class KeyBindMenu extends FlxSubState
             warningTween = FlxTween.tween(keyWarning, {alpha: 0}, 0.5, {ease: FlxEase.circOut, startDelay: 2});
         }
 
-	}
+    }
 
-	function addKey(r:String){
+    function addKey(r:String){
 
         var shouldReturn:Bool = true;
 
@@ -388,7 +388,7 @@ class KeyBindMenu extends FlxSubState
             warningTween = FlxTween.tween(keyWarning, {alpha: 0}, 0.5, {ease: FlxEase.circOut, startDelay: 2});
         }
 
-	}
+    }
 
     function changeItem(_amount:Int = 0)
     {

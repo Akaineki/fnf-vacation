@@ -28,8 +28,8 @@ class Caching extends MusicBeatState
     var text:FlxText;
     var logo:FlxSprite;
 
-	override function create()
-	{
+    override function create()
+    {
         FlxG.mouse.visible = false;
 
         FlxG.worldBounds.set(0,0);
@@ -70,9 +70,9 @@ class Caching extends MusicBeatState
 
     var calledDone = false;
 
-	function percentage(value: Float, outOff: Float):Float {
+    function percentage(value: Float, outOff: Float):Float {
         return (value * 100) / outOff;
-	}
+    }
 
     override function update(elapsed) 
     {

@@ -41,9 +41,9 @@ class GameplayCustomizeState extends MusicBeatState
     
     public override function create() {
         #if windows
-		// Updating Discord Rich Presence
-		DiscordClient.changePresence("Customizing Gameplay", null);
-		#end
+        // Updating Discord Rich Presence
+        DiscordClient.changePresence("Customizing Gameplay", null);
+        #end
 
         sick = new FlxSprite().loadGraphic(Paths.image('sick','shared'));
         sick.scrollFactor.set();
@@ -51,13 +51,13 @@ class GameplayCustomizeState extends MusicBeatState
         curt = new FlxSprite(-500, -300).loadGraphic(Paths.image('stagecurtains','shared'));
         front = new FlxSprite(-650, 600).loadGraphic(Paths.image('stagefront','shared'));
 
-		Conductor.changeBPM(102);
-		persistentUpdate = true;
+        Conductor.changeBPM(102);
+        persistentUpdate = true;
 
         super.create();
 
-		camHUD = new FlxCamera();
-		camHUD.bgColor.alpha = 0;
+        camHUD = new FlxCamera();
+        camHUD.bgColor.alpha = 0;
         FlxG.cameras.add(camHUD);
 
         background.scrollFactor.set(0.9,0.9);
@@ -68,62 +68,62 @@ class GameplayCustomizeState extends MusicBeatState
         add(front);
         add(curt);
 
-		var camFollow = new FlxObject(0, 0, 1, 1);
+        var camFollow = new FlxObject(0, 0, 1, 1);
 
-		dad = new Character(100, 100, 'dad');
+        dad = new Character(100, 100, 'dad');
 
         bf = new Boyfriend(770, 450, 'bf');
 
-		var camPos:FlxPoint = new FlxPoint(dad.getGraphicMidpoint().x + 400, dad.getGraphicMidpoint().y);
+        var camPos:FlxPoint = new FlxPoint(dad.getGraphicMidpoint().x + 400, dad.getGraphicMidpoint().y);
 
-		camFollow.setPosition(camPos.x, camPos.y);
+        camFollow.setPosition(camPos.x, camPos.y);
 
         add(bf);
         add(dad);
 
         add(sick);
 
-		add(camFollow);
+        add(camFollow);
 
-		FlxG.camera.follow(camFollow, LOCKON, 0.01);
-		// FlxG.camera.setScrollBounds(0, FlxG.width, 0, FlxG.height);
-		FlxG.camera.zoom = 0.9;
-		FlxG.camera.focusOn(camFollow.getPosition());
+        FlxG.camera.follow(camFollow, LOCKON, 0.01);
+        // FlxG.camera.setScrollBounds(0, FlxG.width, 0, FlxG.height);
+        FlxG.camera.zoom = 0.9;
+        FlxG.camera.focusOn(camFollow.getPosition());
 
-		strumLine = new FlxSprite(0, FlxG.save.data.strumline).makeGraphic(FlxG.width, 14);
-		strumLine.scrollFactor.set();
+        strumLine = new FlxSprite(0, FlxG.save.data.strumline).makeGraphic(FlxG.width, 14);
+        strumLine.scrollFactor.set();
         strumLine.alpha = 0.4;
 
         add(strumLine);
-		
-		if (FlxG.save.data.downscroll)
-			strumLine.y = FlxG.height - 165;
+        
+        if (FlxG.save.data.downscroll)
+            strumLine.y = FlxG.height - 165;
 
-		strumLineNotes = new FlxTypedGroup<FlxSprite>();
-		add(strumLineNotes);
+        strumLineNotes = new FlxTypedGroup<FlxSprite>();
+        add(strumLineNotes);
 
-		playerStrums = new FlxTypedGroup<FlxSprite>();
+        playerStrums = new FlxTypedGroup<FlxSprite>();
 
         sick.cameras = [camHUD];
         strumLine.cameras = [camHUD];
         playerStrums.cameras = [camHUD];
         
-		generateStaticArrows(0);
-		generateStaticArrows(1);
+        generateStaticArrows(0);
+        generateStaticArrows(1);
 
         text = new FlxText(5, FlxG.height + 40, 0, "Drag around gameplay elements, R to reset, Escape to go back.", 12);
-		text.scrollFactor.set();
-		text.setFormat("VCR OSD Mono", 16, FlxColor.WHITE, LEFT, FlxTextBorderStyle.OUTLINE, FlxColor.BLACK);
+        text.scrollFactor.set();
+        text.setFormat("VCR OSD Mono", 16, FlxColor.WHITE, LEFT, FlxTextBorderStyle.OUTLINE, FlxColor.BLACK);
         
         blackBorder = new FlxSprite(-30,FlxG.height + 40).makeGraphic((Std.int(text.width + 900)),Std.int(text.height + 600),FlxColor.BLACK);
-		blackBorder.alpha = 0.5;
+        blackBorder.alpha = 0.5;
 
-		add(blackBorder);
+        add(blackBorder);
 
-		add(text);
+        add(text);
 
-		FlxTween.tween(text,{y: FlxG.height - 18},2,{ease: FlxEase.elasticInOut});
-		FlxTween.tween(blackBorder,{y: FlxG.height - 18},2, {ease: FlxEase.elasticInOut});
+        FlxTween.tween(text,{y: FlxG.height - 18},2,{ease: FlxEase.elasticInOut});
+        FlxTween.tween(blackBorder,{y: FlxG.height - 18},2, {ease: FlxEase.elasticInOut});
 
         if (!FlxG.save.data.changedHit)
         {
@@ -140,8 +140,8 @@ class GameplayCustomizeState extends MusicBeatState
     }
 
     override function update(elapsed:Float) {
-		if (FlxG.sound.music != null)
-			Conductor.songPosition = FlxG.sound.music.time;
+        if (FlxG.sound.music != null)
+            Conductor.songPosition = FlxG.sound.music.time;
 
         super.update(elapsed);
 
@@ -179,7 +179,7 @@ class GameplayCustomizeState extends MusicBeatState
         {
             FlxG.mouse.visible = false;
             FlxG.sound.play(Paths.sound('cancelMenu'));
-			FlxG.switchState(new OptionsMenu());
+            FlxG.switchState(new OptionsMenu());
         }
 
     }
@@ -201,7 +201,7 @@ class GameplayCustomizeState extends MusicBeatState
 
     // ripped from play state cuz im lazy
     
-	private function generateStaticArrows(player:Int):Void
+    private function generateStaticArrows(player:Int):Void
         {
             for (i in 0...4)
             {

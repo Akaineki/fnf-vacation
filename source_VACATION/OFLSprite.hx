@@ -23,7 +23,7 @@ class OFLSprite extends FlxSprite
 
     private var _frameCount:Int = 0;
 
-	override function update(elapsed:Float)
+    override function update(elapsed:Float)
     {
         if (_frameCount != 2)
         {
