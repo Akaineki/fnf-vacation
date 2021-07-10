@@ -209,6 +209,7 @@ class PlayState extends MusicBeatState
 
 	public static var timeCurrently:Float = 0;
 	public static var timeCurrentlyR:Float = 0;
+	public var palmeiras:FlxSprite;
 	
 	// Will fire once to prevent debug spam messages and broken animations
 	private var triggeredAlready:Bool = false;
@@ -707,11 +708,10 @@ class PlayState extends MusicBeatState
 				conchas.active = false;
 				add(conchas);
 
-				var palmeiras:FlxSprite = new FlxSprite(-558, -434).loadGraphic(Paths.image('joao_tubarao/palmeiras'));
+				palmeiras = new FlxSprite(-558, -434).loadGraphic(Paths.image('joao_tubarao/palmeiras'));
 				palmeiras.antialiasing = true;
 				palmeiras.scrollFactor.set(1.2, 1.2);
 				palmeiras.active = false;
-				add(palmeiras);
 				
 			}	
 			case 'schoolEvil':
@@ -958,8 +958,15 @@ class PlayState extends MusicBeatState
 
 			add(dad);
 			add(boyfriend);
-		}
+		
 
+			if (curStage == 'praia')
+			add(dad);
+			add(boyfriend);
+			add(palmeiras);
+
+		}
+	
 
 		if (loadRep)
 		{
@@ -2353,6 +2360,8 @@ class PlayState extends MusicBeatState
 					case 'senpai-angry':
 						camFollow.y = dad.getMidpoint().y - 430;
 						camFollow.x = dad.getMidpoint().x - 100;
+					case 'joao-tubarao':
+						camFollow.y = dad.getMidpoint().y - -50;
 				}
 
 				if (dad.curCharacter == 'mom')

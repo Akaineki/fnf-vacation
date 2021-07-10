@@ -26,7 +26,7 @@ class StoryMenuState extends MusicBeatState
 
 	var weekData:Array<Dynamic> = [
 		['Tutorial'],
-		['Rei dos mares','Rawr','Argumentos']
+		['King of seas','Rawr','Arguments']
 	];
 	var curDifficulty:Int = 1;
 
@@ -39,7 +39,7 @@ class StoryMenuState extends MusicBeatState
 
 	var weekNames:Array<String> = [
 		"",
-		"João Tubarão"
+		"Jhon Shark"
 	];
 
 	var txtWeekTitle:FlxText;

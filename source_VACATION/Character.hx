@@ -514,6 +514,23 @@ class Character extends FlxSprite
 				addOffset("singDOWN");
 	
 				playAnim('idle');
+			
+			case 'joao_grandao':
+				frames = Paths.getSparrowAtlas('joao_grandao/teste');
+				animation.addByPrefix('idle', 'Joaograndao idle', 24, false);
+				animation.addByPrefix('singUP', 'Joaograndao cima', 24, false);
+				animation.addByPrefix('singDOWN', 'Joaograndao baixo', 24, false);
+				animation.addByPrefix('singLEFT', 'Joaograndao esquerda', 24, false);
+				animation.addByPrefix('singRIGHT', 'Joaograndao direita', 24, false);
+	
+				addOffset('idle');
+				addOffset("singUP");
+				addOffset("singRIGHT");
+				addOffset("singLEFT");
+				addOffset("singDOWN");
+	
+				playAnim('idle');
+
 		}
 
 		dance();
