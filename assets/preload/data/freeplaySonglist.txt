@@ -1,6 +1,6 @@
 Tutorial:gf:1
 High:mom:4
 Philly Nice:pico:3
-King of seas:joao-tubarao:2
-Rawr:joao-tubarao:2
-Arguments:joao-grandao:2
+Rawr:joao-tubarao:1
+Arguments:joao-tubarao:1
+King of seas:joao-grandao:1

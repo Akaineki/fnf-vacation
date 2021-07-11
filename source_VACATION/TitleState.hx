@@ -168,46 +168,46 @@ class TitleState extends MusicBeatState
         // bg.updateHitbox();
         add(bg);
 
-        var ceu:FlxSprite = new FlxSprite(-701, -233).loadGraphic(Paths.image('newbg/ceu'));
+        var ceu:FlxSprite = new FlxSprite(-701, -233).loadGraphic(Paths.image('joao_tubarao/ceu','shared'));
         ceu.antialiasing = true;
         ceu.active = false;
         add(ceu);
         
         var navio:FlxSprite = new FlxSprite(-778, 212);
-        navio.frames = Paths.getSparrowAtlas('newbg/naviopassando');
+        navio.frames = Paths.getSparrowAtlas('joao_tubarao/naviopassando','shared');
         navio.animation.addByPrefix('navio', 'NAVIOPASSANDO', 24, true);
         navio.animation.play('navio');
         add(navio);
 
         var mar:FlxSprite = new FlxSprite(-700, 348);
-        mar.frames = Paths.getSparrowAtlas('newbg/maranimado');
+        mar.frames = Paths.getSparrowAtlas('joao_tubarao/maranimado','shared');
         mar.animation.addByPrefix('maranimado', 'mar simbolo', 24, true);
         mar.animation.play('maranimado');
         add(mar);
 
-        var chao:FlxSprite = new FlxSprite(-493, 483).loadGraphic(Paths.image('newbg/chao'));
+        var chao:FlxSprite = new FlxSprite(-493, 483).loadGraphic(Paths.image('joao_tubarao/chao','shared'));
         chao.antialiasing = true;
         chao.active = false;
         add(chao);
 
         var caranguejo:FlxSprite = new FlxSprite(51, 548);
         caranguejo.antialiasing = true;
-        caranguejo.frames = Paths.getSparrowAtlas('newbg/caranguejo');
+        caranguejo.frames = Paths.getSparrowAtlas('joao_tubarao/caranguejo','shared');
         caranguejo.animation.addByPrefix('caranguejo', 'Caranguejo andando', 24, true);
         caranguejo.animation.play('caranguejo');
         add(caranguejo);
 
-        var concha:FlxSprite = new FlxSprite(286, 565).loadGraphic(Paths.image('newbg/conchasozinha'));
+        var concha:FlxSprite = new FlxSprite(286, 565).loadGraphic(Paths.image('joao_tubarao/conchasozinha','shared'));
         concha.antialiasing = true;
         concha.active = false;
         add(concha);
 
-        var pedra:FlxSprite = new FlxSprite(37, 507).loadGraphic(Paths.image('newbg/pedrasozinha'));
+        var pedra:FlxSprite = new FlxSprite(37, 507).loadGraphic(Paths.image('joao_tubarao/pedrasozinha','shared'));
         pedra.antialiasing = true;
         pedra.active = false;
         add(pedra);
         
-        var palmeiras:FlxSprite = new FlxSprite(-293, -233).loadGraphic(Paths.image('newbg/palmeiras'));
+        var palmeiras:FlxSprite = new FlxSprite(-293, -233).loadGraphic(Paths.image('joao_tubarao/palmeiras','shared'));
         palmeiras.antialiasing = true;
         palmeiras.active = false;
         add(palmeiras);
