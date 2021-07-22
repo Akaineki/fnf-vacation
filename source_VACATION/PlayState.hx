@@ -706,45 +706,52 @@ class PlayState extends MusicBeatState
             }    
             case 'oceano':
             {
-                defaultCamZoom = 0.9; 
+                defaultCamZoom = 0.3; 
                 curStage = 'oceano';
 
-                var bg:FlxSprite = new FlxSprite(-2225, -1430).loadGraphic(Paths.image('joao_grandao/BG'));
+                var bg:FlxSprite = new FlxSprite(-5490, -3437).loadGraphic(Paths.image('joao_grandao/bg'));
                 bg.antialiasing = true;
                 bg.scrollFactor.set(1.5, 1.5);
                 bg.setGraphicSize(Std.int(bg.width * 2));
                 bg.active = false;
                 add(bg);
 
-                var castelo:FlxSprite = new FlxSprite(-1004, -1891).loadGraphic(Paths.image('joao_grandao/castelo'));
+                var bolha:FlxSprite = new FlxSprite(-5273, -2679).loadGraphic(Paths.image('joao_grandao/bolha'));
+                bolha.antialiasing = true;
+                bolha.scrollFactor.set(1.5, 1.5);
+                bolha.setGraphicSize(Std.int(bolha.width * 2));
+                bolha.active = false;
+                add(bolha);
+
+                var castelo:FlxSprite = new FlxSprite(-3063, -4377).loadGraphic(Paths.image('joao_grandao/castelo'));
                 castelo.antialiasing = true;
                 castelo.scrollFactor.set(1.5, 1.5);
                 castelo.active = false;
                 castelo.setGraphicSize(Std.int(castelo.width * 2));
                 add(castelo);
 
-                var barco:FlxSprite = new FlxSprite(-2191, -969).loadGraphic(Paths.image('joao_grandao/barco'));
+                var barco:FlxSprite = new FlxSprite(-5440, -2539).loadGraphic(Paths.image('joao_grandao/barco'));
                 barco.antialiasing = true;
                 barco.scrollFactor.set(1.2, 1.2);
                 barco.setGraphicSize(Std.int(barco.width * 2));
                 barco.active = false;
                 add(barco);
 
-                var frente:FlxSprite = new FlxSprite(-2325, 196).loadGraphic(Paths.image('joao_grandao/frente'));
-                frente.antialiasing = true;
-                frente.scrollFactor.set(1.0, 1.0);
-                frente.setGraphicSize(Std.int(frente.width * 2));
-                frente.active = false;
-                add(frente);
+                var coral:FlxSprite = new FlxSprite(-5713, -192).loadGraphic(Paths.image('joao_grandao/coral'));
+                coral.antialiasing = true;
+                coral.scrollFactor.set(1.0, 1.0);
+                coral.setGraphicSize(Std.int(coral.width * 2));
+                coral.active = false;
+                add(coral);
 
-                var chao:FlxSprite = new FlxSprite(-2644, 449).loadGraphic(Paths.image('joao_grandao/chao'));
+                var chao:FlxSprite = new FlxSprite(-6352, 304).loadGraphic(Paths.image('joao_grandao/chaopedra'));
                 chao.antialiasing = true;
                 chao.scrollFactor.set(0.9, 0.9);
                 chao.setGraphicSize(Std.int(chao.width * 2));
                 chao.active = false;
                 add(chao);
 
-                var luz:FlxSprite = new FlxSprite(-2476, -1584).loadGraphic(Paths.image('joao_grandao/luz'));
+                var luz:FlxSprite = new FlxSprite(-5990, -3943).loadGraphic(Paths.image('joao_grandao/reflexo'));
                 luz.antialiasing = true;
                 luz.scrollFactor.set(0.9, 0.9);
                 luz.setGraphicSize(Std.int(luz.width * 2));

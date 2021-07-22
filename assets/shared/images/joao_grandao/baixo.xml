@@ -1,0 +1,19 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<TextureAtlas imagePath="baixo.png">
+	<!-- Created with Adobe Animate version 21.0.7.42652 -->
+	<!-- http://www.adobe.com/products/animate.html -->
+	<SubTexture name="baixo0000" x="0" y="0" width="2248" height="1647"/>
+	<SubTexture name="baixo0001" x="0" y="0" width="2248" height="1647"/>
+	<SubTexture name="baixo0002" x="0" y="1647" width="2248" height="1647"/>
+	<SubTexture name="baixo0003" x="0" y="1647" width="2248" height="1647"/>
+	<SubTexture name="baixo0004" x="0" y="1647" width="2248" height="1647"/>
+	<SubTexture name="baixo0005" x="0" y="1647" width="2248" height="1647"/>
+	<SubTexture name="baixo0006" x="0" y="1647" width="2248" height="1647"/>
+	<SubTexture name="baixo0007" x="0" y="1647" width="2248" height="1647"/>
+	<SubTexture name="baixo0008" x="0" y="1647" width="2248" height="1647"/>
+	<SubTexture name="baixo0009" x="0" y="1647" width="2248" height="1647"/>
+	<SubTexture name="baixo0010" x="0" y="1647" width="2248" height="1647"/>
+	<SubTexture name="baixo0011" x="0" y="1647" width="2248" height="1647"/>
+	<SubTexture name="baixo0012" x="0" y="1647" width="2248" height="1647"/>
+	<SubTexture name="baixo0013" x="0" y="1647" width="2248" height="1647"/>
+</TextureAtlas>

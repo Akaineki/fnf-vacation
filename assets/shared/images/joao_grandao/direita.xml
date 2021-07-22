@@ -1,0 +1,19 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<TextureAtlas imagePath="direita.png">
+	<!-- Created with Adobe Animate version 21.0.7.42652 -->
+	<!-- http://www.adobe.com/products/animate.html -->
+	<SubTexture name="direita0000" x="0" y="0" width="2248" height="1647"/>
+	<SubTexture name="direita0001" x="0" y="0" width="2248" height="1647"/>
+	<SubTexture name="direita0002" x="0" y="1647" width="2248" height="1647"/>
+	<SubTexture name="direita0003" x="0" y="1647" width="2248" height="1647"/>
+	<SubTexture name="direita0004" x="0" y="1647" width="2248" height="1647"/>
+	<SubTexture name="direita0005" x="0" y="1647" width="2248" height="1647"/>
+	<SubTexture name="direita0006" x="0" y="1647" width="2248" height="1647"/>
+	<SubTexture name="direita0007" x="0" y="1647" width="2248" height="1647"/>
+	<SubTexture name="direita0008" x="0" y="1647" width="2248" height="1647"/>
+	<SubTexture name="direita0009" x="0" y="1647" width="2248" height="1647"/>
+	<SubTexture name="direita0010" x="0" y="1647" width="2248" height="1647"/>
+	<SubTexture name="direita0011" x="0" y="1647" width="2248" height="1647"/>
+	<SubTexture name="direita0012" x="0" y="1647" width="2248" height="1647"/>
+	<SubTexture name="direita0013" x="0" y="1647" width="2248" height="1647"/>
+</TextureAtlas>

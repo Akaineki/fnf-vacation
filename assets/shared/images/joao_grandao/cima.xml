@@ -1,0 +1,19 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<TextureAtlas imagePath="cima.png">
+	<!-- Created with Adobe Animate version 21.0.7.42652 -->
+	<!-- http://www.adobe.com/products/animate.html -->
+	<SubTexture name="cima0000" x="0" y="0" width="2248" height="1647"/>
+	<SubTexture name="cima0001" x="0" y="0" width="2248" height="1647"/>
+	<SubTexture name="cima0002" x="0" y="1647" width="2248" height="1647"/>
+	<SubTexture name="cima0003" x="0" y="1647" width="2248" height="1647"/>
+	<SubTexture name="cima0004" x="0" y="1647" width="2248" height="1647"/>
+	<SubTexture name="cima0005" x="0" y="1647" width="2248" height="1647"/>
+	<SubTexture name="cima0006" x="0" y="1647" width="2248" height="1647"/>
+	<SubTexture name="cima0007" x="0" y="1647" width="2248" height="1647"/>
+	<SubTexture name="cima0008" x="0" y="1647" width="2248" height="1647"/>
+	<SubTexture name="cima0009" x="0" y="1647" width="2248" height="1647"/>
+	<SubTexture name="cima0010" x="0" y="1647" width="2248" height="1647"/>
+	<SubTexture name="cima0011" x="0" y="1647" width="2248" height="1647"/>
+	<SubTexture name="cima0012" x="0" y="1647" width="2248" height="1647"/>
+	<SubTexture name="cima0013" x="0" y="1647" width="2248" height="1647"/>
+</TextureAtlas>

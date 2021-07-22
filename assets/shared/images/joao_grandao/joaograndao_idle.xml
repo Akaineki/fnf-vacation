@@ -1,9 +1,0 @@
-﻿<?xml version="1.0" encoding="utf-8"?>
-<TextureAtlas imagePath="joaograndao_idle.png">
-    <!-- Created with Adobe Animate version 21.0.7.42652 -->
-    <!-- http://www.adobe.com/products/animate.html -->
-    <SubTexture name="Joaograndao idle0000" x="0" y="0" width="4495" height="3293"/>
-    <SubTexture name="Joaograndao idle0001" x="0" y="0" width="4495" height="3293"/>
-    <SubTexture name="Joaograndao idle0002" x="0" y="3293" width="4495" height="3293"/>
-    <SubTexture name="Joaograndao idle0003" x="0" y="3293" width="4495" height="3293"/>
-</TextureAtlas>

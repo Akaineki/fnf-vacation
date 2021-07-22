@@ -1,0 +1,19 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<TextureAtlas imagePath="esquerda.png">
+	<!-- Created with Adobe Animate version 21.0.7.42652 -->
+	<!-- http://www.adobe.com/products/animate.html -->
+	<SubTexture name="esquerda0000" x="0" y="0" width="2248" height="1647"/>
+	<SubTexture name="esquerda0001" x="0" y="0" width="2248" height="1647"/>
+	<SubTexture name="esquerda0002" x="0" y="1647" width="2248" height="1647"/>
+	<SubTexture name="esquerda0003" x="0" y="1647" width="2248" height="1647"/>
+	<SubTexture name="esquerda0004" x="0" y="1647" width="2248" height="1647"/>
+	<SubTexture name="esquerda0005" x="0" y="1647" width="2248" height="1647"/>
+	<SubTexture name="esquerda0006" x="0" y="1647" width="2248" height="1647"/>
+	<SubTexture name="esquerda0007" x="0" y="1647" width="2248" height="1647"/>
+	<SubTexture name="esquerda0008" x="0" y="1647" width="2248" height="1647"/>
+	<SubTexture name="esquerda0009" x="0" y="1647" width="2248" height="1647"/>
+	<SubTexture name="esquerda0010" x="0" y="1647" width="2248" height="1647"/>
+	<SubTexture name="esquerda0011" x="0" y="1647" width="2248" height="1647"/>
+	<SubTexture name="esquerda0012" x="0" y="1647" width="2248" height="1647"/>
+	<SubTexture name="esquerda0013" x="0" y="1647" width="2248" height="1647"/>
+</TextureAtlas>
