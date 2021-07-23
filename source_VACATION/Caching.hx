@@ -1,5 +1,6 @@
 package;
 
+import flixel.addons.ui.FlxUIState;
 import haxe.Exception;
 import flixel.tweens.FlxEase;
 import flixel.tweens.FlxTween;
@@ -20,13 +21,15 @@ import flixel.text.FlxText;
 
 using StringTools;
 
-class Caching extends MusicBeatState
+class Caching extends FlxUIState
 {
     var toBeDone = 0;
     var done = 0;
 
     var text:FlxText;
     var logo:FlxSprite;
+    var loading:FlxSprite;
+    var show_cached_trace:Bool = false;
 
     override function create()
     {
@@ -34,30 +37,24 @@ class Caching extends MusicBeatState
 
         FlxG.worldBounds.set(0,0);
 
-        text = new FlxText(FlxG.width / 2, FlxG.height / 2 + 300,0,"Loading...");
+        text = new FlxText(FlxG.width / 2, FlxG.height-120,0,"Loading...");
         text.size = 16;
         text.autoSize = false;
+        text.fieldWidth = FlxG.width;
         text.alignment = FlxTextAlign.CENTER;
+        text.x = 0;
         
         logo = new FlxSprite(FlxG.width / 2, FlxG.height / 2).loadGraphic(Paths.image('logo'));
         logo.antialiasing = true;
         logo.x -= logo.width / 2;
         logo.y -= logo.height / 2 + 100;
-        
-        trace(FlxG.width);
-        trace(FlxG.height);
-
-        // text.x = 1280/2;
-        
-        text.x = 0;
-        text.fieldWidth = FlxG.width;
-        text.y -= logo.height / 2 - 125;
-        // text.y = FlxG.height/2;
-        
         logo.setGraphicSize(Std.int(logo.width * 0.6));
-        
+
+        loading = new FlxSprite(FlxG.width / 2, FlxG.height-80).makeGraphic(1, 15, FlxColor.MAGENTA);
+
         add(logo);
         add(text);
+        add(loading);
 
         trace('starting caching..');
         
@@ -74,23 +71,30 @@ class Caching extends MusicBeatState
         return (value * 100) / outOff;
     }
 
-    override function update(elapsed) 
+    function update_loading()
     {
-        if (toBeDone != 0 && done != toBeDone)
-        {
-            text.text = "Loading... (" + Math.ceil(percentage(done, toBeDone)) + "%)";
+        if (toBeDone == 0) {
+            loading.alpha = 0; 
+        } else {
+            loading.alpha = 1;
         }
 
-        super.update(elapsed);
+        if (toBeDone != 0 && done != toBeDone)
+        {
+            text.text = Math.ceil(percentage(done, toBeDone)) + "%";
+
+            loading.scale.x += 31;
+
+            // trace(loading.scale.x + "/" + FlxG.width);
+        }
     }
 
     function cache()
     {
-
         var images = [];
         var music = [];
 
-        trace("caching images...");
+        trace("Caching images...");
 
         for (i in FileSystem.readDirectory(FileSystem.absolutePath("assets/shared/images/characters")))
         {
@@ -99,7 +103,7 @@ class Caching extends MusicBeatState
             images.push(i);
         }
 
-        trace("caching music...");
+        trace("Caching music...");
 
         for (i in FileSystem.readDirectory(FileSystem.absolutePath("assets/songs")))
         {
@@ -107,23 +111,24 @@ class Caching extends MusicBeatState
         }
 
         toBeDone = Lambda.count(images) + Lambda.count(music);
-
-        trace("LOADING: " + toBeDone + " OBJECTS.");
+        if (show_cached_trace) trace("LOADING: " + toBeDone + " OBJECTS.");
 
         for (i in images)
         {
             var replaced = i.replace(".png","");
             FlxG.bitmap.add(Paths.image("characters/" + replaced,"shared"));
-            trace("cached " + replaced);
+            if (show_cached_trace) trace("Cached: Image => " + replaced);
             done++;
+            update_loading();
         }
 
         for (i in music)
         {
             FlxG.sound.cache(Paths.inst(i));
             FlxG.sound.cache(Paths.voices(i));
-            trace("cached " + i);
+            if (show_cached_trace) trace("Cached: Music => " + i);
             done++;
+            update_loading();
         }
 
         trace("Finished caching...");
