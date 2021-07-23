@@ -102,7 +102,6 @@ class PlayState extends MusicBeatState
     var halloweenLevel:Bool = false;
 
     var songLength:Float = 0;
-    var kadeEngineWatermark:FlxText;
     
     #if windows
     // Discord RPC variables
@@ -1126,15 +1125,6 @@ class PlayState extends MusicBeatState
         // healthBar
         add(healthBar);
 
-        // Add Kade Engine watermark
-        kadeEngineWatermark = new FlxText(4,healthBarBG.y + 50,0,SONG.song + " - " + CoolUtil.difficultyFromInt(storyDifficulty) + (Main.watermarks ? " | KE " + MainMenuState.kadeEngineVer : ""), 16);
-        kadeEngineWatermark.setFormat(Paths.font("vcr.ttf"), 16, FlxColor.WHITE, RIGHT, FlxTextBorderStyle.OUTLINE,FlxColor.BLACK);
-        kadeEngineWatermark.scrollFactor.set();
-        add(kadeEngineWatermark);
-
-        if (PlayStateChangeables.useDownscroll)
-            kadeEngineWatermark.y = FlxG.height * 0.9 + 45;
-
         scoreTxt = new FlxText(FlxG.width / 2 - 235, healthBarBG.y + 50, 0, "", 20);
 
         scoreTxt.screenCenter(X);
@@ -1186,7 +1176,6 @@ class PlayState extends MusicBeatState
             songPosBG.cameras = [camHUD];
             songPosBar.cameras = [camHUD];
         }
-        kadeEngineWatermark.cameras = [camHUD];
         if (loadRep)
             replayTxt.cameras = [camHUD];
 
@@ -2055,7 +2044,6 @@ class PlayState extends MusicBeatState
             if (luaModchart.getVar("showOnlyStrums",'bool'))
             {
                 healthBarBG.visible = false;
-                kadeEngineWatermark.visible = false;
                 healthBar.visible = false;
                 iconP1.visible = false;
                 iconP2.visible = false;
@@ -2064,7 +2052,6 @@ class PlayState extends MusicBeatState
             else
             {
                 healthBarBG.visible = true;
-                kadeEngineWatermark.visible = true;
                 healthBar.visible = true;
                 iconP1.visible = true;
                 iconP2.visible = true;

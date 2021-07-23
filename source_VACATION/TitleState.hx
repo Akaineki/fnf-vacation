@@ -92,7 +92,7 @@ class TitleState extends MusicBeatState
 
         FlxG.save.bind('funkin', 'ninjamuffin99');
 
-        KadeEngineData.initSave();
+        GustavoSaveData.initSave();
 
         // var file:SMFile = SMFile.loadFile("file.sm");
         // this was testing things
